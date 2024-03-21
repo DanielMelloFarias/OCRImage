@@ -31,9 +31,11 @@ if file is not None:
 
 
     # Mostra as respostas
-    responseImage = modelVision.generate_content(['Extraia Informações: - Nome, - CPF, - Unidade Escolar, - Ano/Série, - Turma, - Nome do Responsável e CPF, - Cidade e Data da ASsinatura e qual box foi marcada', imagem])
+    responseImage = modelVision.generate_content(['Extraia Informações: - Nome, - CPF, - Unidade Escolar, - Ano/Série, - Turma, - Nome do Responsável e CPF, - Cidade e Data da ASsinatura e qual box foi marcada. E ponha em um JSON', imagem])
     #responseImage = modelVision.generate_content(['Extraia Informações relevantes', img])
-    response = modelText.generate_content(['Ajuste o texto e me mostre de forma organizada', responseImage.text])
+    response = modelText.generate_content(['Ajuste o texto e me mostre de forma organizada em formato JSON', responseImage.text])
+
+
     print (responseImage.text)
-    print ("#################")
+    #print ("#################")
     print(response.text)
