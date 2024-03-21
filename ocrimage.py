@@ -1,13 +1,8 @@
 import pandas as pd
 import google.generativeai as genai
-
-
-import os
-
+import streamlit as st
 import PIL
 
-# Carrega as variáveis de ambiente do arquivo .env
-load_dotenv()
 
 genai.configure(api_key = os.environ.get('KeyMaster'))
 
